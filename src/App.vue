@@ -4,7 +4,11 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
-    <router-view/>
+    <p @click="$store.commit('add')">{{ $store.state.counter }}</p>
+    <p @click="$store.dispatch('add')">{{ $store.state.counter }}</p>
+    <p>double counter:{{$store.getters.doubleCounter}}</p>
+    <!--路由出口 存放页面内容容器-->
+    <router-view />
   </div>
 </template>
 
